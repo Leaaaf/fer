@@ -8,6 +8,7 @@ import * as tf from '@tensorflow/tfjs';
 import loadModel from '../tf/load-model';
 import { LayersModel, Tensor, Tensor3D } from '@tensorflow/tfjs';
 import processImage from '../tf/process-image';
+import { delay } from './utility-time';
 
 const styles = StyleSheet.create({
     camera: {
@@ -66,6 +67,7 @@ const TensorCameraComponent = ({ updateEmotion }: any) => {
                 console.log(`Predicted result: ${predictedValue}`);
                 updateEmotion(predictedValue);
             }
+            await delay(500);
             requestAnimationFrame(loop);
         };
         loop();
