@@ -1,0 +1,11 @@
+version = 0.1
+[default]
+[default.deploy]
+[default.deploy.parameters]
+stack_name = "aws-sam-cli-managed-default"
+s3_bucket = "aws-sam-cli-managed-default-samclisourcebucket-6k8h9xfsyaop"
+s3_prefix = "aws-sam-cli-managed-default"
+region = "eu-south-1"
+confirm_changeset = true
+capabilities = "CAPABILITY_IAM"
+image_repositories = ["InferenceFunction=242870391042.dkr.ecr.eu-south-1.amazonaws.com/fer-classifier"]
