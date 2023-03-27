@@ -19,9 +19,7 @@ def lambda_handler(event, context):
 
     return {
         'statusCode': 200,
-        'body': json.dumps(
-            {
-                "predicted_label": label,
-            }
-        )
+        'body': {
+            "predicted_label": label,
+        }
     }
