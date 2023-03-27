@@ -14,7 +14,7 @@ def lambda_handler(event, context):
     image_bytes = event['body'].encode('utf-8')
     image = Image.open(BytesIO(base64.b64decode(image_bytes))).convert(mode='L')
 
-    probabilities = model(np.array(image).reshape(None, 48, 48, 1))
+    probabilities = model(np.resize(image, (1, 48, 48, 1)))
     label = np.argmax(probabilities)
 
     return {
